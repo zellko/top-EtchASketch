@@ -1,8 +1,10 @@
 body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: #F6E7D8;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-content: center;
     margin: 0;
 }
 
@@ -27,8 +29,15 @@ button {
     color: #F6E7D8;
     font-size: 16px;
     font-weight: 700;
-    padding: 8px 16px;
+    padding: 1vw 2vw;
     margin: 0 16px;
+    border-radius: 1em;
+    transition: all .07s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px black;
 }
 
 .buttons {
@@ -52,12 +61,7 @@ button {
     box-sizing: border-box;
     background-color: white;
     border: 1px solid #F68989;
-    /* padding-bottom: 5.55555555556%;
-    flex: 0 1 5.55555555556%; */
-}
-
-.blackCell {
-    background-color: black;
+    aspect-ratio: 1;
 }
 
 .footer {
@@ -76,6 +80,22 @@ a {
 }
 
 .footer img {
-    height: 24px;
+    height: 32px;
     margin: 0 16px;
+    transition: all 1s ease;
+}
+
+.footer img:hover {
+    transform: scale(1.1) rotate(1080deg);
+}
+
+
+/******************
+JAVASCRIPT CLASS:
+The classe below are used by the JS code
+******************/
+
+.btnActive {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px black;
 }
