@@ -1,7 +1,19 @@
 // *****************
+// Variables
+// *****************
+const slider = document.querySelector("#myRange");
+const sliderValue = document.querySelector(".slider-value");
+const btnClear = document.querySelector("#btn-clear");
+const grid = document.querySelector(".grid");
+const btnBlack = document.querySelector("#btn-black");
+const btnRGB = document.querySelector("#btn-rgb");
+const btnBorder = document.querySelector("#btn-border");
+let cellColor = "blackCell";
+let borderToggle = true;
+
+// *****************
 // GENERATE THE GRID
 // *****************
-const grid = document.querySelector(".grid");
 
 function createGrid(rowSize) {
     //Generate the grid from a given row size
@@ -15,27 +27,41 @@ function createGrid(rowSize) {
     };
 };
 
-createGrid(16);
+// *****************
+// Slider and grid modification
+// *****************
+
+sliderValue.textContent = `${slider.value}x${slider.value}`;
+
+slider.addEventListener("input", function() {
+    sliderValue.textContent = `${slider.value}x${slider.value}`;
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => grid.removeChild(cell));
+    createGrid(slider.value);
+
+    console.log(borderToggle);
+    if (borderToggle) toggleGridBorder();
+    checkForClickMouseover();
+})
+
+function deleteGrid() {; }
 
 // *****************
 // Coloring the cells
 // *****************
 
 // Set cells color: Black or RGB
-const btnBlack = document.querySelector("#btn-black");
-const btnRGB = document.querySelector("#btn-rgb");
-let cellColor = "blackCell";
 btnBlack.classList.add("btnActive");
 
 btnBlack.addEventListener("click", function() {
-    btnBlack.classList.toggle("btnActive");
-    btnRGB.classList.toggle("btnActive");
+    btnBlack.classList.add("btnActive");
+    btnRGB.classList.remove("btnActive");
     cellColor = "blackCell";
 });
 
 btnRGB.addEventListener("click", function() {
-    btnBlack.classList.toggle("btnActive");
-    btnRGB.classList.toggle("btnActive");
+    btnRGB.classList.add("btnActive");
+    btnBlack.classList.remove("btnActive");
     cellColor = "rgbCell";
 });
 
@@ -52,23 +78,45 @@ function colorCell(e) {
     };
 }
 
-const cells = document.querySelectorAll(".cell");
-
-cells.forEach(cell => cell.addEventListener("click", colorCell));
-cells.forEach(cell => cell.addEventListener("mouseover", colorCell));
+function checkForClickMouseover() {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => cell.addEventListener("click", colorCell));
+    cells.forEach(cell => cell.addEventListener("mouseover", colorCell));
+}
 
 // *****************
 // Clear the grid
 // *****************
 
-const btnClear = document.querySelector("#btn-clear");
-
 function clearGrid() {
-    console.log("clear");
+    const cells = document.querySelectorAll(".cell");
     cells.forEach(cell => cell.style.backgroundColor = "white");
 }
 
 btnClear.addEventListener("click", clearGrid);
+
+// *****************
+// Toggle border
+// *****************
+function toggleGridBorder(e) {
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell => cell.classList.toggle("gridBorder"));
+
+    if (this.id === "btn-border") {
+        (borderToggle === true) ? borderToggle = false: borderToggle = true;
+    };
+
+}
+
+btnBorder.addEventListener("click", toggleGridBorder);
+
+// *****************
+// Initialisation
+// *****************
+createGrid(16);
+toggleGridBorder();
+checkForClickMouseover();
+
 
 
 // *****************
