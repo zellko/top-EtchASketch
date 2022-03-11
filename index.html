@@ -15,20 +15,31 @@
     <div class="content">
         <div class="buttons">
             <button id="btn-black">Black</button>
+            <button id="btn-darken">Darken</button>
             <button id="btn-rgb">RGB</button>
-            <button id="btn-border">Grid Border</button>
-            <div class="slider-box">
-                <p class="slider-value"></p>
-                <input type="range" min="8" max="64" value="16" step="8" class="slider" id="myRange">
-            </div>
-        </div>
-        <div class="grid"></div>
-        <div class="buttons-bot">
             <button id="btn-clear">Clear</button>
         </div>
+        <div class="buttons">
+            <div class="slider-box">
+                <p class="slider-value"></p>
+                <input type="range" min="8" max="32" value="16" step="8" class="slider" id="myRange">
+            </div>
+            <button id="btn-border">Grid Border</button>
+        </div>
+        <div class="grid"></div>
+        <div class="instruction">
+            <em>
+            <p>Right-click a cell to paint it.</p>
+            <p>Hold Right-click to paint multiple cells.</p>
+            <p>Use Shift+Right-click to clear a single cell</p>
+            </em>
+        </div>
     </div>
-    <div class="footer"> ©2022 Zellko
-        <a href="https://github.com/zellko/top-EtchASketch"><img src="./img/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo"></a>
+    <div class="footer">
+        <p class="footer-date">©2022 Zellko</p>
+        <a href="https://github.com/zellko/top-EtchASketch">
+            <img src="./img/GitHub-Mark-Light-120px-plus.png" alt="GitHub logo">
+        </a>
     </div>
 
 </body>
