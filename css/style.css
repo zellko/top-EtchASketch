@@ -1,6 +1,5 @@
 body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: #F6E7D8;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,19 +8,22 @@ body {
 }
 
 .header {
-    color: #874356;
+    background-color: #11999E;
+    color: #E4F9F5;
     font-size: 48px;
     font-weight: 900;
     display: flex;
     justify-content: center;
-    padding: 36px 0;
+    padding: 24px 0;
 }
 
 .content {
+    background-color: #E4F9F5;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 32px 0;
 }
 
 
@@ -30,8 +32,8 @@ body {
 **************/
 
 button {
-    background-color: #C65D7B;
-    color: #F6E7D8;
+    background-color: #11999E;
+    color: #E4F9F5;
     border: none;
     font-size: 16px;
     font-weight: 700;
@@ -42,11 +44,15 @@ button {
 
 button:hover {
     transform: scale(1.05);
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px #30E3CA;
+}
+
+#btn-clear {
+    background-color: #40514E;
 }
 
 .buttons {
-    flex: 1;
+    flex: 0;
     display: flex;
     align-items: scenter;
     justify-content: center;
@@ -68,7 +74,7 @@ button:hover {
 }
 
 .slider-value {
-    color: #C65D7B;
+    color: #11999E;
     font-size: 16x;
     font-weight: bolder;
     margin: 0;
@@ -79,8 +85,8 @@ button:hover {
     /* Override default CSS styles */
     appearance: none;
     min-width: 64px;
-    background: #F6E7D8;
-    outline: #C65D7B solid;
+    background: #E4F9F5;
+    outline: #11999E solid;
     border-radius: 5px;
     /* Remove outline */
 }
@@ -100,7 +106,7 @@ and -moz- (Firefox) to override default look)
     height: 24px;
     /* Slider handle height */
     border-radius: 3px;
-    background: #C65D7B;
+    background: #11999E;
     /* Green background */
     cursor: pointer;
     /* Cursor on hover */
@@ -112,7 +118,7 @@ and -moz- (Firefox) to override default look)
     height: 24px;
     /* Slider handle height */
     border-radius: 3px;
-    background: #C65D7B;
+    background: #11999E;
     /* Green background */
     cursor: pointer;
     /* Cursor on hover */
@@ -124,19 +130,18 @@ and -moz- (Firefox) to override default look)
 **************/
 
 .grid {
-    flex: 1;
+    flex: 0;
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start;
     min-width: 320px;
-    max-width: 500px;
-    margin: 32px 0;
-    box-shadow: 8px 8px #000000;
+    max-width: 460px;
+    box-shadow: 8px 8px #30E3CA;
+    margin: 24px 0;
 }
 
 .cell {
     box-sizing: border-box;
-    background-color: white;
     min-width: 5px;
     aspect-ratio: 1;
     /* animation: ShadowZoom 3s ease infinite; */
@@ -144,14 +149,20 @@ and -moz- (Firefox) to override default look)
 
 
 /*************** 
-    BUTTONS - Below Grid
+    Instruction
 **************/
 
-.buttons-bot {
+.instruction {
     flex: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    text-align: center;
+    color: #11999E;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.instruction p {
+    margin: 0;
+    padding: 4px 0;
 }
 
 
@@ -160,13 +171,14 @@ and -moz- (Firefox) to override default look)
 **************/
 
 .footer {
-    background-color: #874356;
-    color: white;
-    font-size: 24px;
+    background-color: #40514E;
+    color: #E4F9F5;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px 0;
+    padding: 8px 0;
+    height: 28px;
 }
 
 .footer a {
@@ -175,7 +187,7 @@ and -moz- (Firefox) to override default look)
 }
 
 .footer img {
-    height: 32px;
+    height: 24px;
     margin: 0 16px;
     transition: all 1s ease;
 }
@@ -192,11 +204,11 @@ The classe below are used by the JS code
 
 .btnActive {
     transform: scale(1.05);
-    box-shadow: 5px 5px black;
+    box-shadow: 5px 5px #30E3CA;
 }
 
 .gridBorder {
-    border: 1px solid #F68989;
+    border: 1px solid #30E3CA;
 }
 
 
